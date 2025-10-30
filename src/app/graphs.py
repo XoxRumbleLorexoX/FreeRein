@@ -20,6 +20,7 @@ class AgentState(TypedDict, total=False):
     memory_hits: List[Dict[str, Any]]
     reply: str
     meta: Dict[str, Any]
+    generation_error: str
     client: Any
     tracer: JsonTracer
     trace_id: str
@@ -143,8 +144,10 @@ def synthesize_node(state: AgentState) -> AgentState:
         try:
             response = client.generate(messages, stream=False)
             reply = response.get("message", {}).get("content", "")
-        except Exception:
+        except Exception as exc:
             reply = "Unable to generate response at this time."
+            state["generation_error"] = str(exc)
+            _log(state, "synthesize_error", error=str(exc))
     state["reply"] = reply or "No answer generated."
     state["sources"] = sources
     duration = time.time() - start
@@ -162,6 +165,8 @@ def respond_node(state: AgentState) -> Dict[str, Any]:
         "pages": len(state.get("pages", [])),
         "memory_hits": len(state.get("memory_hits", [])),
     }
+    if error := state.get("generation_error"):
+        meta["generation_error"] = error
     _log(state, "respond", duration=0, reply_length=len(reply))
     return {"reply": reply, "sources": sources, "meta": meta}
 

@@ -72,13 +72,18 @@ class LangGraphAdapter(AbstractOrchestrator):
                 {"episode_id": hit.get("episode_id"), "score": hit.get("score"), "query": hit.get("query")}
                 for hit in episodic_hits
             ]
-        memory.record_episode(
-            query=query,
-            response=result.get("reply", ""),
-            mode=cleaned_mode,
-            sources=result.get("sources", []),
-            meta=result.get("meta", {}),
-        )
+        reply_text = (result.get("reply") or "").strip()
+        meta = result.get("meta", {})
+        generation_failed = meta.get("generation_error")
+        is_placeholder_reply = reply_text in {"Unable to generate response at this time.", "No answer generated."}
+        if reply_text and not generation_failed and not is_placeholder_reply:
+            memory.record_episode(
+                query=query,
+                response=reply_text,
+                mode=cleaned_mode,
+                sources=result.get("sources", []),
+                meta=meta,
+            )
         return result
 
     @property

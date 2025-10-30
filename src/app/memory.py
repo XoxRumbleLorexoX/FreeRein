@@ -105,6 +105,14 @@ def search_memory(query: str, k: int = 3) -> List[Dict[str, Any]]:
             continue
         episode = metadata[idx].copy()
         episode["score"] = float(score)
+        response = (episode.get("response") or "").strip()
+        meta = episode.get("meta") or {}
+        if not response:
+            continue
+        if meta.get("generation_error"):
+            continue
+        if response in {"Unable to generate response at this time.", "No answer generated."}:
+            continue
         hits.append(episode)
     return hits
 

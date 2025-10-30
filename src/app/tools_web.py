@@ -1,6 +1,7 @@
 """Web tooling utilities for search and crawling."""
 from __future__ import annotations
 
+import asyncio
 import time
 from collections import deque
 from dataclasses import dataclass
@@ -24,16 +25,35 @@ def web_search_ddg(query: str, max_results: int = 5) -> List[Dict[str, str]]:
     if not settings.enable_web:
         raise RuntimeError("Web access disabled by configuration")
     results: List[Dict[str, str]] = []
-    with DDGS() as ddgs:
+    ddgs = DDGS()
+    try:
         for result in ddgs.text(query, max_results=max_results):
             if not result:
                 continue
-            results.append({
-                "title": result.get("title", ""),
-                "href": result.get("href", ""),
-                "body": result.get("body", ""),
-            })
+            results.append(
+                {
+                    "title": result.get("title", ""),
+                    "href": result.get("href", ""),
+                    "body": result.get("body", ""),
+                }
+            )
+    finally:
+        _close_ddgs_session(ddgs)
     return results
+
+
+def _close_ddgs_session(ddgs: DDGS) -> None:
+    session = getattr(ddgs, "_asession", None)
+    close = getattr(session, "close", None) if session else None
+    if not close:
+        return
+    coro = close()
+    try:
+        loop = asyncio.get_running_loop()
+    except RuntimeError:
+        asyncio.run(coro)
+    else:
+        loop.create_task(coro)
 
 
 def _is_allowed(url: str) -> bool:

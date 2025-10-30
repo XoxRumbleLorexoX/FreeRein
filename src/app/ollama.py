@@ -42,7 +42,11 @@ class OllamaClient:
     @retry(wait=wait_exponential(multiplier=1, min=1, max=8), stop=stop_after_attempt(3))
     def _post(self, path: str, json_payload: Dict[str, Any], stream: bool = False) -> httpx.Response:
         url = f"{self.base_url}{path}"
-        response = self._client.post(url, json=json_payload, stream=stream)
+        if stream:
+            request = self._client.build_request("POST", url, json=json_payload)
+            response = self._client.send(request, stream=True)
+        else:
+            response = self._client.post(url, json=json_payload)
         self._raise_for_status(response)
         return response
 

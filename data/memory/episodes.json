@@ -62,5 +62,326 @@
         }
       ]
     }
+  },
+  {
+    "episode_id": "339a9230109d4f39b91817d802a9e21e",
+    "timestamp": 1761839698.6964722,
+    "query": "tell em the weather in Ha7\n",
+    "response": "Unable to generate response at this time.",
+    "mode": "hybrid",
+    "sources": [
+      "memory://19b6c0828c844f44b67df37395fb310c",
+      "memory://f3433397d74c425387629697ad6e1342",
+      "memory://e3fc66eb1c354e43989cdd1eea14ca4c"
+    ],
+    "meta": {
+      "mode": "hybrid",
+      "retrieved": 0,
+      "web_results": 0,
+      "pages": 0,
+      "memory_hits": 3,
+      "memory": [
+        {
+          "episode_id": "19b6c0828c844f44b67df37395fb310c",
+          "score": 0.1293611079454422,
+          "query": "Explain FAISS"
+        },
+        {
+          "episode_id": "f3433397d74c425387629697ad6e1342",
+          "score": 0.010955030098557472,
+          "query": "What is LangGraph?"
+        },
+        {
+          "episode_id": "e3fc66eb1c354e43989cdd1eea14ca4c",
+          "score": 0.010955030098557472,
+          "query": "What is LangGraph?"
+        }
+      ]
+    }
+  },
+  {
+    "episode_id": "b0c9f4ff3ec84d6090b3d87f6d3f649e",
+    "timestamp": 1761839988.8243961,
+    "query": "weather in ha7",
+    "response": "Unable to generate response at this time.",
+    "mode": "hybrid",
+    "sources": [
+      "memory://339a9230109d4f39b91817d802a9e21e",
+      "memory://19b6c0828c844f44b67df37395fb310c",
+      "memory://f3433397d74c425387629697ad6e1342"
+    ],
+    "meta": {
+      "mode": "hybrid",
+      "retrieved": 0,
+      "web_results": 0,
+      "pages": 0,
+      "memory_hits": 3,
+      "memory": [
+        {
+          "episode_id": "339a9230109d4f39b91817d802a9e21e",
+          "score": 0.6342868804931641,
+          "query": "tell em the weather in Ha7\n"
+        },
+        {
+          "episode_id": "19b6c0828c844f44b67df37395fb310c",
+          "score": 0.04757096618413925,
+          "query": "Explain FAISS"
+        },
+        {
+          "episode_id": "f3433397d74c425387629697ad6e1342",
+          "score": -0.03615860641002655,
+          "query": "What is LangGraph?"
+        }
+      ]
+    }
+  },
+  {
+    "episode_id": "e16b6c5254f14b01b26e63f464b12f10",
+    "timestamp": 1761840120.1776059,
+    "query": "\nweather in HA73PA",
+    "response": "Unable to generate response at this time.",
+    "mode": "hybrid",
+    "sources": [
+      "memory://b0c9f4ff3ec84d6090b3d87f6d3f649e",
+      "memory://339a9230109d4f39b91817d802a9e21e",
+      "memory://19b6c0828c844f44b67df37395fb310c"
+    ],
+    "meta": {
+      "mode": "hybrid",
+      "retrieved": 0,
+      "web_results": 0,
+      "pages": 0,
+      "memory_hits": 3,
+      "memory": [
+        {
+          "episode_id": "b0c9f4ff3ec84d6090b3d87f6d3f649e",
+          "score": 0.6267279386520386,
+          "query": "weather in ha7"
+        },
+        {
+          "episode_id": "339a9230109d4f39b91817d802a9e21e",
+          "score": 0.599702000617981,
+          "query": "tell em the weather in Ha7\n"
+        },
+        {
+          "episode_id": "19b6c0828c844f44b67df37395fb310c",
+          "score": 0.02743629738688469,
+          "query": "Explain FAISS"
+        }
+      ]
+    }
+  },
+  {
+    "episode_id": "c19b18c3a6594f5d8a5084980a9ff52b",
+    "timestamp": 1761840640.137515,
+    "query": "test question",
+    "response": "Unable to generate response at this time.",
+    "mode": "hybrid",
+    "sources": [
+      "memory://19b6c0828c844f44b67df37395fb310c",
+      "memory://339a9230109d4f39b91817d802a9e21e",
+      "memory://b0c9f4ff3ec84d6090b3d87f6d3f649e"
+    ],
+    "meta": {
+      "mode": "hybrid",
+      "retrieved": 0,
+      "web_results": 0,
+      "pages": 0,
+      "memory_hits": 3,
+      "generation_error": "Exceeded retries when contacting Ollama",
+      "memory": [
+        {
+          "episode_id": "19b6c0828c844f44b67df37395fb310c",
+          "score": 0.29052069783210754,
+          "query": "Explain FAISS"
+        },
+        {
+          "episode_id": "339a9230109d4f39b91817d802a9e21e",
+          "score": 0.22655144333839417,
+          "query": "tell em the weather in Ha7\n"
+        },
+        {
+          "episode_id": "b0c9f4ff3ec84d6090b3d87f6d3f649e",
+          "score": 0.21559755504131317,
+          "query": "weather in ha7"
+        }
+      ]
+    }
+  },
+  {
+    "episode_id": "f306fb8a12cd4cf8be17277c64750890",
+    "timestamp": 1761841113.787317,
+    "query": "hi",
+    "response": "Unable to generate response at this time.",
+    "mode": "hybrid",
+    "sources": [
+      "memory://e16b6c5254f14b01b26e63f464b12f10",
+      "memory://339a9230109d4f39b91817d802a9e21e",
+      "memory://b0c9f4ff3ec84d6090b3d87f6d3f649e"
+    ],
+    "meta": {
+      "mode": "hybrid",
+      "retrieved": 0,
+      "web_results": 0,
+      "pages": 0,
+      "memory_hits": 3,
+      "generation_error": "Exceeded retries when contacting Ollama",
+      "memory": [
+        {
+          "episode_id": "e16b6c5254f14b01b26e63f464b12f10",
+          "score": 0.22333770990371704,
+          "query": "\nweather in HA73PA"
+        },
+        {
+          "episode_id": "339a9230109d4f39b91817d802a9e21e",
+          "score": 0.22287477552890778,
+          "query": "tell em the weather in Ha7\n"
+        },
+        {
+          "episode_id": "b0c9f4ff3ec84d6090b3d87f6d3f649e",
+          "score": 0.21325528621673584,
+          "query": "weather in ha7"
+        }
+      ]
+    }
+  },
+  {
+    "episode_id": "9737ece1efb3444eb4e587938b116614",
+    "timestamp": 1761841315.02416,
+    "query": "Quick test prompt",
+    "response": "The question is \"What is the capital of France?\" The context provided is that memory is unable to generate a response at this time. \n\nAccording to the World Factbook, Paris is the capital of France. It has been the capital since 1204 and is located on the River Seine in northern France.",
+    "mode": "hybrid",
+    "sources": [
+      "memory://c19b18c3a6594f5d8a5084980a9ff52b",
+      "memory://f306fb8a12cd4cf8be17277c64750890",
+      "memory://339a9230109d4f39b91817d802a9e21e"
+    ],
+    "meta": {
+      "mode": "hybrid",
+      "retrieved": 0,
+      "web_results": 0,
+      "pages": 0,
+      "memory_hits": 3,
+      "memory": [
+        {
+          "episode_id": "c19b18c3a6594f5d8a5084980a9ff52b",
+          "score": 0.4230121672153473,
+          "query": "test question"
+        },
+        {
+          "episode_id": "f306fb8a12cd4cf8be17277c64750890",
+          "score": 0.28537216782569885,
+          "query": "hi"
+        },
+        {
+          "episode_id": "339a9230109d4f39b91817d802a9e21e",
+          "score": 0.2526058554649353,
+          "query": "tell em the weather in Ha7\n"
+        }
+      ]
+    }
+  },
+  {
+    "episode_id": "7168ba618abe4241868f9d07f74a9e3c",
+    "timestamp": 1761841339.984629,
+    "query": "hi",
+    "response": "Unable to generate response at this time.",
+    "mode": "hybrid",
+    "sources": [
+      "memory://f306fb8a12cd4cf8be17277c64750890",
+      "memory://e16b6c5254f14b01b26e63f464b12f10",
+      "memory://339a9230109d4f39b91817d802a9e21e"
+    ],
+    "meta": {
+      "mode": "hybrid",
+      "retrieved": 0,
+      "web_results": 0,
+      "pages": 0,
+      "memory_hits": 3,
+      "generation_error": "Exceeded retries when contacting Ollama",
+      "memory": [
+        {
+          "episode_id": "f306fb8a12cd4cf8be17277c64750890",
+          "score": 0.37450045347213745,
+          "query": "hi"
+        },
+        {
+          "episode_id": "e16b6c5254f14b01b26e63f464b12f10",
+          "score": 0.22333770990371704,
+          "query": "\nweather in HA73PA"
+        },
+        {
+          "episode_id": "339a9230109d4f39b91817d802a9e21e",
+          "score": 0.22287477552890778,
+          "query": "tell em the weather in Ha7\n"
+        }
+      ]
+    }
+  },
+  {
+    "episode_id": "61a60ad189514d42be0dcc71607cd821",
+    "timestamp": 1761841470.4052732,
+    "query": "hi\n",
+    "response": "Answer: Memory is unable to generate a response due to an unspecified issue.",
+    "mode": "hybrid",
+    "sources": [
+      "memory://7168ba618abe4241868f9d07f74a9e3c",
+      "memory://f306fb8a12cd4cf8be17277c64750890",
+      "memory://e16b6c5254f14b01b26e63f464b12f10"
+    ],
+    "meta": {
+      "mode": "hybrid",
+      "retrieved": 0,
+      "web_results": 0,
+      "pages": 0,
+      "memory_hits": 3,
+      "memory": [
+        {
+          "episode_id": "7168ba618abe4241868f9d07f74a9e3c",
+          "score": 0.37450045347213745,
+          "query": "hi"
+        },
+        {
+          "episode_id": "f306fb8a12cd4cf8be17277c64750890",
+          "score": 0.37450045347213745,
+          "query": "hi"
+        },
+        {
+          "episode_id": "e16b6c5254f14b01b26e63f464b12f10",
+          "score": 0.22333770990371704,
+          "query": "\nweather in HA73PA"
+        }
+      ]
+    }
+  },
+  {
+    "episode_id": "2f58ae1e1a1345a698c1315a0cc94310",
+    "timestamp": 1761841573.423418,
+    "query": "Quick test prompt",
+    "response": "Question: What is the best way to improve memory retention?\n\nCitation 1: \"The Best Way to Improve Memory Retention,\" by Dr. Daniel Amen, MD (2020). https://www.amenclinics.com/blog/the-best-way-to-improve-memory-retention/",
+    "mode": "hybrid",
+    "sources": [],
+    "meta": {
+      "mode": "hybrid",
+      "retrieved": 0,
+      "web_results": 0,
+      "pages": 0,
+      "memory_hits": 0
+    }
+  },
+  {
+    "episode_id": "811a01ac09754fa1b86eff3d40c4b05b",
+    "timestamp": 1761841769.795382,
+    "query": "hi",
+    "response": "Hi, what is your question?",
+    "mode": "hybrid",
+    "sources": [],
+    "meta": {
+      "mode": "hybrid",
+      "retrieved": 0,
+      "web_results": 0,
+      "pages": 0,
+      "memory_hits": 0
+    }
   }
 ]
