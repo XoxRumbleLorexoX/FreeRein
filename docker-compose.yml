@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+  backend:
+    build: .
+    container_name: lam-agent-unified
+    environment:
+      - OLLAMA_BASE_URL=http://host.docker.internal:11434
+      - OLLAMA_MODEL=${OLLAMA_MODEL:-llama3:8b}
+      - TEMPERATURE=${TEMPERATURE:-0.2}
+      - NUM_CTX=${NUM_CTX:-4096}
+      - TRACE_DIR=${TRACE_DIR:-data/traces}
+      - DOCS_DIR=${DOCS_DIR:-data/docs}
+      - MODE=${MODE:-hybrid}
+      - ENABLE_WEB=${ENABLE_WEB:-true}
+      - ENABLE_PLAYWRIGHT=${ENABLE_PLAYWRIGHT:-false}
+      - FRONTEND_ENABLED=${FRONTEND_ENABLED:-true}
+      - PORT=${PORT:-8000}
+    ports:
+      - "${PORT:-8000}:8000"
+    volumes:
+      - ./data:/app/data
+      - ./.env:/app/.env:ro
+    restart: unless-stopped

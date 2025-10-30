@@ -1,0 +1,66 @@
+[
+  {
+    "episode_id": "e3fc66eb1c354e43989cdd1eea14ca4c",
+    "timestamp": 1759858865.4496992,
+    "query": "What is LangGraph?",
+    "response": "No response.",
+    "mode": "offline",
+    "sources": [],
+    "meta": {
+      "mode": "offline",
+      "retrieved": 1,
+      "web_results": 0,
+      "pages": 0,
+      "memory_hits": 0
+    }
+  },
+  {
+    "episode_id": "f3433397d74c425387629697ad6e1342",
+    "timestamp": 1759858924.990443,
+    "query": "What is LangGraph?",
+    "response": "No response.",
+    "mode": "offline",
+    "sources": [],
+    "meta": {
+      "mode": "offline",
+      "retrieved": 1,
+      "web_results": 0,
+      "pages": 0,
+      "memory_hits": 1,
+      "memory": [
+        {
+          "episode_id": "e3fc66eb1c354e43989cdd1eea14ca4c",
+          "score": 0.8789486289024353,
+          "query": "What is LangGraph?"
+        }
+      ]
+    }
+  },
+  {
+    "episode_id": "19b6c0828c844f44b67df37395fb310c",
+    "timestamp": 1759858926.927637,
+    "query": "Explain FAISS",
+    "response": "No response.",
+    "mode": "offline",
+    "sources": [],
+    "meta": {
+      "mode": "offline",
+      "retrieved": 0,
+      "web_results": 0,
+      "pages": 0,
+      "memory_hits": 2,
+      "memory": [
+        {
+          "episode_id": "f3433397d74c425387629697ad6e1342",
+          "score": 0.14102071523666382,
+          "query": "What is LangGraph?"
+        },
+        {
+          "episode_id": "e3fc66eb1c354e43989cdd1eea14ca4c",
+          "score": 0.14102071523666382,
+          "query": "What is LangGraph?"
+        }
+      ]
+    }
+  }
+]

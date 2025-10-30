@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+.env
+.venv/
+venv/
+*.egg-info/
+*.log
+
+# Data
+/data/vectorstore/
+/data/traces/
+*.jsonl
+
+# Frontend
+node_modules/
+frontend/node_modules/
+frontend/dist/
+
+# Editor
+.DS_Store
+.idea/
+.vscode/
+
+# Docker
+*.pid

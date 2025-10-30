@@ -1,0 +1,3 @@
+Welcome to lam-agent-unified.
+
+This folder is indexed by the default RAG pipeline. Drop your local markdown or text files here and rebuild the index using either the CLI (`python -m app.cli rag-index`) or the FastAPI endpoint (`POST /rag/index`).
